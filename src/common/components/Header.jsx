@@ -1,13 +1,23 @@
 import React from "react";
 import classes from "./Header.module.css";
-import { Box, Button, Link, Paper, Stack, Typography } from "@mui/material";
+import { Box, Button, Link, Paper, Stack, styled } from "@mui/material";
+
+const StyledLink = styled((props) => (
+  <Link {...props} underline="none" color="white" />
+))(``);
 
 export default function Header() {
   return (
     <Paper
       component={"header"}
       elevation={3}
-      sx={{ borderRadius: 0, position: "sticky", top: 0 }}
+      sx={{
+        borderRadius: 0,
+        position: "sticky",
+        top: 0,
+        backgroundColor: "primary",
+        zIndex: 1300,
+      }}
     >
       <Stack
         className={classes.header}
@@ -26,20 +36,20 @@ export default function Header() {
           alignItems={"center"}
           gap={2}
         >
-          <Link underline="hover" className={classes["nav-link"]}>
+          <StyledLink underline="hover" className={classes["nav-link"]}>
             flight
-          </Link>
-          <Link underline="hover" className={classes["nav-link"]}>
+          </StyledLink>
+          <StyledLink underline="hover" className={classes["nav-link"]}>
             hotel
-          </Link>
-          <Link underline="hover" className={classes["nav-link"]}>
+          </StyledLink>
+          <StyledLink underline="hover" className={classes["nav-link"]}>
             visa
-          </Link>
-          <Link underline="hover" className={classes["nav-link"]}>
+          </StyledLink>
+          <StyledLink underline="hover" className={classes["nav-link"]}>
             holidays
-          </Link>
+          </StyledLink>
         </Stack>
-        <Button>Login</Button>
+        <Button sx={{ color: "#fff" }}>Login</Button>
       </Stack>
     </Paper>
   );

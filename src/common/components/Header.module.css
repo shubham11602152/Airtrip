@@ -1,16 +1,15 @@
 .header {
   width: 100%;
   height: 56px;
-  /* background-color: #0000ff; */
 
   display: flex;
+  background-color: #0000ff;
 }
 
 .logo_wrapper {
-  /* color: #fff; */
-  color: #000;
-
+  color: #fff;
   transform: skewX(-15deg);
+  padding: 0 16px;
 }
 
 .nav-link {
