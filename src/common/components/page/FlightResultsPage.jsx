@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getFlightsData } from "../../../services/flight.service";
 import ResultCard from "../ui/ResultCard";
 import { toReadableProperties } from "../../utils/utility";
-import { Typography } from "@mui/material";
+import { Container, Stack, Typography } from "@mui/material";
 import Loader from "../ui/Loader";
 
 export default function FlightResultsPage() {
