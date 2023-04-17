@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { toCurrency_INR } from "../../utils/utility";
+import { secToHHMM, toCurrency_INR } from "../../utils/utility";
 
 export default function ResultCard({
   price,
@@ -29,7 +29,7 @@ export default function ResultCard({
         <CardContent>
           <Stack direction={"row"} gap={3}>
             <CardField label="Airline" value={airline} />
-            <CardField label="Flight time" value={flightTime} />
+            <CardField label="Flight time" value={secToHHMM(flightTime)} />
             <CardField label="Dep" value={departureCity} />
             <CardField label="Dep time" value={departureTime} />
             <CardField label="Arr" value={arrivalCity} />
