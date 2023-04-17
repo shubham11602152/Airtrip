@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getFlightsData } from "../../../services/flight.service";
 import ResultCard from "../ui/ResultCard";
-import { toReadableProperties } from "../../utils/utility";
 import { Container, Stack, Typography } from "@mui/material";
 import Loader from "../ui/Loader";
 
@@ -55,12 +54,7 @@ export default function FlightResultsPage() {
       </Typography>
       <Stack gap={2}>
         {data.map((flight, index) => {
-          return (
-            <ResultCard
-              key={flight.id + index}
-              {...toReadableProperties(flight)}
-            />
-          );
+          return <ResultCard key={index} {...flight} />;
         })}
       </Stack>
     </Container>

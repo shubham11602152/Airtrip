@@ -1,4 +1,5 @@
 import flightData from "../data/api-data.json";
+import { toFlightsData } from "../mapper/flights-mapper";
 
 export const getFlightsData = async () => {
   const { data, error } = flightData;
@@ -6,5 +7,5 @@ export const getFlightsData = async () => {
     (acc, curr) => [...acc, ...curr.results.j],
     []
   );
-  return { data: allVendorsMerged, error };
+  return { data: toFlightsData(allVendorsMerged), error };
 };
