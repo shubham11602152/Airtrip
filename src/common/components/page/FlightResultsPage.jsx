@@ -48,7 +48,7 @@ export default function FlightResultsPage() {
   }
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <Typography variant="h6" marginBottom={1}>
         {data.length} Results
       </Typography>
