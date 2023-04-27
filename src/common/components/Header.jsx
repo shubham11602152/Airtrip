@@ -34,7 +34,8 @@ export default function Header() {
           direction={"row"}
           justifyContent={"space-between"}
           alignItems={"center"}
-          gap={2}
+          gap={3}
+          sx={{ display: { xs: "none", sm: "inherit" } }}
         >
           <StyledLink underline="hover" className={classes["nav-link"]}>
             flight

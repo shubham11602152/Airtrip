@@ -19,21 +19,27 @@ export default function ResultCard({
 }) {
   const CardField = ({ label, value, sx }) => (
     <Stack alignItems={"center"} {...sx}>
-      <Typography variant="body">{label}</Typography>
-      {<Typography>{value ?? "-"}</Typography>}
+      <Typography variant="body">{value ?? "-"}</Typography>
+      <Typography variant="body2" color="grey">
+        {label}
+      </Typography>
     </Stack>
   );
   return (
     <Card>
       <CardActionArea>
         <CardContent>
-          <Stack direction={"row"} gap={3}>
-            <CardField label="Airline" value={airline} />
-            <CardField label="Flight time" value={secToHHMM(flightTime)} />
-            <CardField label="Dep" value={departureCity} />
-            <CardField label="Dep time" value={departureTime} />
-            <CardField label="Arr" value={arrivalCity} />
-            <CardField label="Arr time" value={arrivalTime} />
+          <Stack direction={"row"} gap={3} flexWrap={"wrap"}>
+            <CardField sx={{ mr: "auto" }} label="Airline" value={airline} />
+            <CardField label="Departure" value={departureCity} />
+            <CardField label="Departure time" value={departureTime} />
+            <CardField
+              sx={{ mx: "auto" }}
+              label="Flight time"
+              value={secToHHMM(flightTime)}
+            />
+            <CardField label="Arrival" value={arrivalCity} />
+            <CardField label="Arrival time" value={arrivalTime} />
             <CardField
               sx={{ ml: "auto" }}
               label="Price"
