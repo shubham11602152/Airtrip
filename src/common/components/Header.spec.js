@@ -10,4 +10,9 @@ describe("Check Header UI components", () => {
     const logoText = screen.getByText(/airtrip/i);
     expect(logoText).toBeInTheDocument();
   });
+  test("Test if Login Button is rendered", () => {
+    const button = screen.getByRole("button");
+    console.log({ button });
+    expect(button).toBeInTheDocument();
+  });
 });
