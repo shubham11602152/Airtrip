@@ -34,7 +34,7 @@ export default function Header() {
           direction={"row"}
           justifyContent={"space-between"}
           alignItems={"center"}
-          gap={3}
+          gap={5}
           sx={{ display: { xs: "none", sm: "inherit" } }}
         >
           <StyledLink underline="hover" className={classes["nav-link"]}>

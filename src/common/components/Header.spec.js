@@ -12,7 +12,6 @@ describe("Check Header UI components", () => {
   });
   test("Test if Login Button is rendered", () => {
     const button = screen.getByRole("button");
-    console.log({ button });
     expect(button).toBeInTheDocument();
   });
 });

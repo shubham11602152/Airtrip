@@ -3,6 +3,8 @@ import { getFlightsData } from "../../../services/flight.service";
 import ResultCard from "../ui/ResultCard";
 import { Container, Stack, Typography } from "@mui/material";
 import Loader from "../ui/Loader";
+import SortBar from "./SortBar";
+import FilterBar from "./FilterBar";
 
 export default function FlightResultsPage() {
   const [data, setData] = useState([]);
@@ -36,6 +38,7 @@ export default function FlightResultsPage() {
       <Container
         maxWidth="lg"
         sx={{
+          mt: "24px",
           minHeight: "inherit",
           display: "flex",
           justifyContent: "center",
@@ -48,15 +51,19 @@ export default function FlightResultsPage() {
   }
 
   return (
-    <Container maxWidth="md">
-      <Typography variant="h6" marginBottom={1}>
-        {data.length} Results
-      </Typography>
-      <Stack gap={2}>
-        {data.map((flight, index) => {
-          return <ResultCard key={index} {...flight} />;
-        })}
-      </Stack>
-    </Container>
+    <>
+      <FilterBar />
+      <Container maxWidth="md" sx={{ mt: "24px" }}>
+        <SortBar />
+        <Typography variant="h6" marginBottom={1}>
+          {data.length} Results
+        </Typography>
+        <Stack gap={2}>
+          {data.map((flight, index) => {
+            return <ResultCard key={index} {...flight} />;
+          })}
+        </Stack>
+      </Container>
+    </>
   );
 }
